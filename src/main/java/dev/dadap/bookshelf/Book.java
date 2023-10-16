@@ -10,19 +10,19 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document(collection= "movies")
+@Document(collection= "books")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
     @Id
     private ObjectId id;
+    private String thumbnailUrl;
     private String isbn;
     private String title;
-    private String releaseDate;
-    private String thumbnail;
-    private List<String> genres;
-    private List<String> backdrops;
+    private String shortDescription;
+    private List<String> categories;
+    private List<String> authors;
     @DocumentReference
-    private List<Review> reviewIds;
+    private List<Review> reviewId;
 }
